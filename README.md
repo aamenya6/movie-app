@@ -8,6 +8,13 @@ A simple React application to browse, add, and filter movies.
 - Filter movies by title and rating
 - Ability to add new movies
 
+## New Features
+
+- Ability to use the router library to route views
+- Added a description and the trailer link (embed video link) to the object movie
+- Made it possible for the movie card to open the movie description and trailer page
+Ability to navigate back to the home page from the description page
+
 ## Project Structure
 
 - `public/` — Static files and HTML
