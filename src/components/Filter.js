@@ -1,5 +1,3 @@
-/* Title and Star Rating */
-
 import React from "react";
 
 function Filter({ setTitleFilter, setRatingFilter }) {
@@ -10,7 +8,6 @@ function Filter({ setTitleFilter, setRatingFilter }) {
         placeholder="Filter by title"
         onChange={(e) => setTitleFilter(e.target.value)}
       />
-
       <select onChange={(e) => setRatingFilter(Number(e.target.value))}>
         <option value={0}>All Ratings</option>
         <option value={1}>⭐</option>

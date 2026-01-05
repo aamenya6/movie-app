@@ -1,5 +1,3 @@
-/* Form to Add Movies */
-
 import React, { useState } from "react";
 
 function AddMovie({ addMovie }) {
@@ -7,18 +5,20 @@ function AddMovie({ addMovie }) {
   const [description, setDescription] = useState("");
   const [posterURL, setPosterURL] = useState("");
   const [rating, setRating] = useState(0);
+  const [trailer, setTrailer] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title || !posterURL) {
-      alert("Title and Poster URL are required!");
+    if (!title || !posterURL || !trailer) {
+      alert("Title, Poster, and Trailer are required!");
       return;
     }
-    addMovie({ title, description, posterURL, rating });
+    addMovie({ title, description, posterURL, rating, trailer });
     setTitle("");
     setDescription("");
     setPosterURL("");
     setRating(0);
+    setTrailer("");
   };
 
   return (
@@ -41,6 +41,13 @@ function AddMovie({ addMovie }) {
         placeholder="Poster URL"
         value={posterURL}
         onChange={(e) => setPosterURL(e.target.value)}
+        required
+      />
+      <input
+        type="text"
+        placeholder="Trailer (YouTube embed link)"
+        value={trailer}
+        onChange={(e) => setTrailer(e.target.value)}
         required
       />
       <select value={rating} onChange={(e) => setRating(Number(e.target.value))}>
